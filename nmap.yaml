@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nmap
+spec:
+  selector:
+    matchLabels:
+      app: nmap
+  template:
+    metadata:
+      labels:
+        app: nmap
+    spec:
+      containers:
+        - name: nmap
+          image: havipapapilaya/nmap_api
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
